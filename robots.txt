@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vpwillwreckyou.github.io/vahagn-portfolio/sitemap.xml
