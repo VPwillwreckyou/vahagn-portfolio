@@ -7,14 +7,27 @@
 <meta name="description" content="Vahagn Papikyan — Web Developer, AI Enthusiast, Technology Builder. Building web pages and intelligent software solutions. Projects: Momentum, Millida Launcher, Mamba AI, Engineering Bridge, Samba & Mamba, SRM.">
 <meta property="og:title" content="Vahagn Papikyan — Web Developer & AI Enthusiast">
 <meta property="og:description" content="Building web pages and intelligent software solutions. Open to building a web page for you.">
-<meta property="og:image" content="https://vpwillwreckyou.github.io/vahagn-portfolio/images/srm.webp">
+<meta property="og:image" content="https://vpwillwreckyou.github.io/vahagn-portfolio/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vahagn Papikyan — Web Developer and AI Enthusiast">
 <meta property="og:url" content="https://vpwillwreckyou.github.io/vahagn-portfolio/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Vahagn Papikyan">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Vahagn Papikyan — Web Developer & AI Enthusiast">
 <meta name="twitter:description" content="Building web pages and intelligent software solutions.">
-<meta name="twitter:image" content="https://vpwillwreckyou.github.io/vahagn-portfolio/images/srm.webp">
-<link rel="icon" type="image/png" href="images/srm.png">
+<meta name="twitter:image" content="https://vpwillwreckyou.github.io/vahagn-portfolio/images/og-image.png">
+<link rel="canonical" href="https://vpwillwreckyou.github.io/vahagn-portfolio/">
+<meta name="theme-color" content="#02030a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Vahagn Papikyan","jobTitle":"Web Developer","description":"Web developer and AI enthusiast building web pages and intelligent software.","url":"https://vpwillwreckyou.github.io/vahagn-portfolio/","image":"https://vpwillwreckyou.github.io/vahagn-portfolio/images/og-image.png","sameAs":["https://github.com/VPwillwreckyou"],"knowsAbout":["Web development","HTML","CSS","JavaScript","Python","C++","C#","Assembly","AI","Automation"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,800&display=swap" rel="stylesheet">
 <style>
@@ -27,10 +40,14 @@ body{font-family:var(--f);color:var(--ink);overflow-x:hidden;-webkit-text-size-a
 a{color:inherit}
 :focus-visible{outline:2px solid #7fd0ff;outline-offset:3px}
 #spacer{width:1px}
+.noscript{position:relative;z-index:100;max-width:640px;margin:0 auto;padding:48px 24px;font-family:var(--f);color:var(--ink)}
+.noscript h1{font-size:34px;letter-spacing:-.03em;margin-bottom:14px}
+.noscript p{color:var(--dim);line-height:1.6}
 #stage{position:fixed;inset:0;overflow:hidden;background:linear-gradient(180deg,var(--c1),var(--c2) 55%,var(--c3));padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 #stars{position:absolute;inset:0;opacity:1}
 #orb{position:absolute;width:18vmin;height:18vmin;border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);filter:blur(1px)}
 #hz{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent)}
+html[data-theme="light"] #hz{background:linear-gradient(0deg,rgba(24,20,60,.08),transparent)}
 /* intro */
 #os{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:max(20px,env(safe-area-inset-top)) 5vw 5vw;pointer-events:none;will-change:transform,opacity}
 .bar{display:flex;justify-content:space-between;font-size:clamp(12px,1.1vw,15px);color:var(--dim)}
@@ -80,7 +97,7 @@ h2{font-weight:300;font-size:max(15px,1.3cqw);color:var(--dim);margin-bottom:3cq
 .meta{display:flex;flex-wrap:wrap;gap:.6cqw 1.6cqw;font-size:max(12px,1.1cqw);color:var(--ink)}
 .meta span{opacity:.85}
 .status{display:inline-block;margin:1.4cqw 0;padding:.4cqw 1.2cqw;border:1px solid var(--ink);border-radius:99px;font-size:max(12px,1.1cqw)}
-.gh{display:inline-block;margin-top:.8cqw;font-size:max(13px,1.2cqw);text-underline-offset:5px}
+.gh{display:inline-block;margin-top:.8cqw;padding:6px 0;font-size:max(13px,1.2cqw);text-underline-offset:5px}
 .art{position:relative;aspect-ratio:4/3;border:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.03);transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .3s}
 .proj:hover .art,.proj:focus-within .art,.proj.on .art{transform:translateY(-6px) rotate(-.6deg);border-color:var(--ink)}
 .art>*{position:absolute}
@@ -113,8 +130,8 @@ footer{padding:3cqw 6cqw 8cqw;font-size:max(12px,1.1cqw);color:var(--dim)}
  #mon{width:94vw;height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));max-height:none;aspect-ratio:auto;border-radius:42px;padding:9px}
  #mon::after{display:none}
  #scr{border-radius:34px}
- #menu{flex-wrap:wrap;padding:12px 18px 8px;font-size:12px}
- #menu nav{order:3;width:100%;overflow-x:auto;gap:18px;scrollbar-width:none}
+ #menu{flex-wrap:wrap;padding:12px 14px 8px;font-size:12px}
+ #menu nav{order:3;width:100%;overflow-x:auto;gap:14px;scrollbar-width:none}
  #menu button{padding:10px 2px;white-space:nowrap}
  section{padding:90px 22px 40px}
  section:first-child{padding-top:112px}
@@ -164,6 +181,12 @@ html[data-theme="light"] .bar__controls select,html[data-theme="light"] .bar__co
 </style>
 </head>
 <body>
+<noscript>
+ <div class="noscript">
+  <h1>Vahagn Papikyan</h1>
+  <p>Web developer and AI enthusiast. This portfolio uses JavaScript for its interactive presentation. My projects and code are on <a href="https://github.com/VPwillwreckyou" target="_blank" rel="noopener">GitHub</a>, and you can reach me at <a href="mailto:papikyanvahagn666@gmail.com">papikyanvahagn666@gmail.com</a> or <a href="tel:+37455190685">+374 55 190 685</a>.</p>
+ </div>
+</noscript>
 <div id="spacer"></div>
 <div id="stage" aria-hidden="false">
  <div id="stars" aria-hidden="true"></div><div id="orb" aria-hidden="true"></div><div id="hz" aria-hidden="true"></div>
@@ -205,9 +228,9 @@ const CONFIGS={
   intro:"I'm a student developer interested in building intelligent software, AI-powered tools, and technology that solves real problems. I enjoy experimenting with new technologies, engineering ambitious projects, and turning ideas into working products.",
   projects:[
    {title:"Momentum",kind:1,status:"In development",github:"https://github.com/VPwillwreckyou/MOMENTUM",image:"images/20-onboarding-goal.webp",stack:["Goal tracking","Action steps","Progress","Web"],text:"An offline-first personal goal command center: organize goals, generate actionable steps, and track progress across web, desktop and mobile."},
-   {title:"Millida Launcher",kind:2,status:"Completed",github:"https://github.com/VPwillwreckyou/Millida-VP-Modpack-AI",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"An AI-powered Minecraft launcher that manages modpacks, automates setup, and gets you into the game fast."},
+   {title:"Millida Launcher",kind:2,status:"Completed",github:"",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"An AI-powered Minecraft launcher that manages modpacks, automates setup, and gets you into the game fast."},
    {title:"Mamba AI",kind:3,status:"Paused",github:"https://github.com/VPwillwreckyou/mamba-ai",image:"images/Screenshot 2026-11-14 193545.webp",stack:["Python","PySide6","Local models","Cloud providers","Offline-first"],text:"A personal AI assistant web page with local (Ollama) and cloud providers, voice, browser, Spotify, Discord and email capabilities."},
-   {title:"Manhunt",kind:4,status:"In planning",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"A Flutter web page project."},
+   {title:"Manhunt",kind:4,status:"In planning",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"A cross-platform mobile app built with Flutter for Android and iOS."},
    {title:"Engineering Bridge",kind:1,status:"Completed",github:"https://github.com/VPwillwreckyou/engineering-bridge",image:"images/Bridge.webp",stack:["Python","FastAPI","MCP","SQLite","Pydantic"],text:"Local integration that lets ChatGPT talk to a local OpenCode instance: submits dev tasks, monitors sessions, runs tests, and returns structured reports through MCP tools."},
    {title:"Samba and Mamba",kind:2,status:"Completed",github:"https://github.com/VPwillwreckyou/samba-mamba",image:"images/samba.webp",stack:["Three.js","React","Node.js","HTML/CSS/JS"],text:"Brand web presence for Samba and Mamba: an immersive 3D Three.js landing experience plus a React storefront, served by a zero-dependency Node server."},
    {title:"SRM - Social Republic of Midashes",kind:3,status:"Completed",github:"https://github.com/VPwillwreckyou/srm-midashes",image:"images/srm.webp",stack:["HTML","CSS","JavaScript"],text:"Community website for the Social Republic of Midashes, presenting the rank system, abilities, armor trims and the community flag."}
@@ -228,9 +251,9 @@ const CONFIGS={
   intro:"Я студент-разработчик, интересуюсь созданием интеллектуального ПО, инструментов на базе ИИ и технологий, решающих реальные задачи. Люблю экспериментировать с новыми технологиями, создавать амбициозные проекты и превращать идеи в работающие продукты.",
   projects:[
    {title:"Momentum",kind:1,status:"В разработке",github:"https://github.com/VPwillwreckyou/MOMENTUM",image:"images/20-onboarding-goal.webp",stack:["Goal tracking","Action steps","Progress","Web"],text:"Офлайн-ориентированный персональный центр управления целями: организуйте цели, генерируйте шаги и отслеживайте прогресс на вебе, десктопе и мобильных устройствах."},
-   {title:"Millida Launcher",kind:2,status:"Завершено",github:"https://github.com/VPwillwreckyou/Millida-VP-Modpack-AI",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"ИИ-лаунчер Minecraft, который управляет модпаками, автоматизирует установку и быстро запускает игру."},
+   {title:"Millida Launcher",kind:2,status:"Завершено",github:"",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"ИИ-лаунчер Minecraft, который управляет модпаками, автоматизирует установку и быстро запускает игру."},
    {title:"Mamba AI",kind:3,status:"Приостановлено",github:"https://github.com/VPwillwreckyou/mamba-ai",image:"images/Screenshot 2026-11-14 193545.webp",stack:["Python","PySide6","Local models","Cloud providers","Offline-first"],text:"Персональный ИИ-ассистент для Windows с локальными (Ollama) и облачными провайдерами, голосом, браузером, Spotify, Discord и email."},
-   {title:"Manhunt",kind:4,status:"В планах",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"Проект приложения на Flutter."},
+   {title:"Manhunt",kind:4,status:"В планах",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"Кроссплатформенное мобильное приложение на Flutter для Android и iOS."},
    {title:"Engineering Bridge",kind:1,status:"Завершено",github:"https://github.com/VPwillwreckyou/engineering-bridge",image:"images/Bridge.webp",stack:["Python","FastAPI","MCP","SQLite","Pydantic"],text:"Локальная интеграция, позволяющая ChatGPT общаться с локальным OpenCode: отправляет задачи разработки, отслеживает сессии, запускает тесты и возвращает структурированные отчёты через MCP-инструменты."},
    {title:"Samba and Mamba",kind:2,status:"Завершено",github:"https://github.com/VPwillwreckyou/samba-mamba",image:"images/samba.webp",stack:["Three.js","React","Node.js","HTML/CSS/JS"],text:"Веб-присутствие бренда Samba and Mamba: иммерсивный 3D-лендинг на Three.js и React-витрина, обслуживаемые сервером Node без зависимостей."},
    {title:"SRM - Social Republic of Midashes",kind:3,status:"Завершено",github:"https://github.com/VPwillwreckyou/srm-midashes",image:"images/srm.webp",stack:["HTML","CSS","JavaScript"],text:"Сайт сообщества Social Republic of Midashes, представляющий систему рангов, способности, отделку брони и флаг сообщества."}
@@ -251,8 +274,8 @@ const CONFIGS={
   intro:"Ես ուսանող-ծրագրավորող եմ, հետաքրքրվում եմ ինտելեկտուալ ծրագրերի, ԱԲ-ի վրա հիմնված գործիքների և իրական խնդիրներ լուծող տեխնոլոգիաների ստեղծմամբ։ Սիրում եմ փորձարկել նոր տեխնոլոգիաներ, ստեղծել հավակնոտ նախագծեր և գաղափարները դարձնել աշխատող արտադրանք։",
   projects:[
    {title:"Momentum",kind:1,status:"Մշակման մեջ",github:"https://github.com/VPwillwreckyou/MOMENTUM",image:"images/20-onboarding-goal.webp",stack:["Goal tracking","Action steps","Progress","Web"],text:"Անցանց անհատական նպատակների կառավարման կենտրոն. կազմակերպեք նպատակները, ստեղծեք քայլեր և հետևեք առաջընթացին վեբում, համակարգչում և բջջայինում։"},
-   {title:"Millida Launcher",kind:2,status:"Ավարտված",github:"https://github.com/VPwillwreckyou/Millida-VP-Modpack-AI",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"ԱԲ-ով Minecraft գործարկիչ, որը կառավարում է մոդպակետները, ավտոմատացնում տեղադրումը և արագ գործարկում խաղը."},   {title:"Mamba AI",kind:3,status:"Դադարեցված",github:"https://github.com/VPwillwreckyou/mamba-ai",image:"images/Screenshot 2026-11-14 193545.webp",stack:["Python","PySide6","Local models","Cloud providers","Offline-first"],text:"Անհատական ԱԲ-օգնական Windows-ի համար՝ տեղական (Ollama) և ամպային մատակարարներով, ձայնով, բրաուզերով, Spotify-ով, Discord-ով և էլ․ փոստով։"},
-   {title:"Manhunt",kind:4,status:"Պլանավորման մեջ",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"Flutter-ի վրա հիմնված հավելվածի նախագիծ։"},
+   {title:"Millida Launcher",kind:2,status:"Ավարտված",github:"",image:"images/millida.webp",stack:["Java","Modpacks","Automation","AI","Tauri","Rust"],text:"ԱԲ-ով Minecraft գործարկիչ, որը կառավարում է մոդպակետները, ավտոմատացնում տեղադրումը և արագ գործարկում խաղը."},   {title:"Mamba AI",kind:3,status:"Դադարեցված",github:"https://github.com/VPwillwreckyou/mamba-ai",image:"images/Screenshot 2026-11-14 193545.webp",stack:["Python","PySide6","Local models","Cloud providers","Offline-first"],text:"Անհատական ԱԲ-օգնական Windows-ի համար՝ տեղական (Ollama) և ամպային մատակարարներով, ձայնով, բրաուզերով, Spotify-ով, Discord-ով և էլ․ փոստով։"},
+   {title:"Manhunt",kind:4,status:"Պլանավորման մեջ",github:"https://github.com/VPwillwreckyou/manhunt",image:"images/Manhunt Neon Lobby Map.webp",stack:["Flutter"],text:"Բազմապլատֆորմ բջջային հավելված Flutter-ով Android-ի և iOS-ի համար:"},
    {title:"Engineering Bridge",kind:1,status:"Ավարտված",github:"https://github.com/VPwillwreckyou/engineering-bridge",image:"images/Bridge.webp",stack:["Python","FastAPI","MCP","SQLite","Pydantic"],text:"Տեղական ինտեգրում, որը թույլ է տալիս ChatGPT-ին շփվել տեղական OpenCode-ի հետ. ուղարկում է մշակման առաջադրանքներ, հետևում սեսիաներին, գործարկում թեստեր և վերադարձնում կառուցվածքային հաշվետվություններ MCP գործիքներով։"},
    {title:"Samba and Mamba",kind:2,status:"Ավարտված",github:"https://github.com/VPwillwreckyou/samba-mamba",image:"images/samba.webp",stack:["Three.js","React","Node.js","HTML/CSS/JS"],text:"Samba and Mamba բրենդի վեբ ներկայություն. իմերսիվ 3D լենդինգ Three.js-ով և React խանութ՝ առանց կախվածությունների Node սերվերով։"},
    {title:"SRM - Social Republic of Midashes",kind:3,status:"Ավարտված",github:"https://github.com/VPwillwreckyou/srm-midashes",image:"images/srm.webp",stack:["HTML","CSS","JavaScript"],text:"Social Republic of Midashes համայնքի կայք՝ ներկայացնող ռանգերի համակարգը, կարողությունները, զրահի զարդարանքները և համայնքի դրոշը։"}
@@ -287,7 +310,7 @@ function techIcon(t){return t.toLowerCase().replace(/[^a-z0-9]/g,'_')+'.png'}
 function render(){
  $('#track').innerHTML=`
 <section id="about"><h2 data-i18n="about">${T('about')}</h2><div class="big">Software<br><em>developer</em></div><p class="lead">${C.intro}</p><div class="roles">${C.roles.map(r=>`<span>${r}</span>`).join('')}</div></section>
-<section id="projects"><h2 data-i18n="projects">${T('projects')}</h2>${C.projects.map(p=>`<article class="proj" tabindex="0"><div class="art art-img"><img src="${p.image}" alt="${p.title}" loading="lazy"></div><div><h3>${p.title}</h3><p>${p.text}</p><div class="meta">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div><span class="status">${p.status}</span><br><a class="gh" href="${p.github}" target="_blank" rel="noopener">GitHub repository</a></div></article>`).join('')}</section>
+<section id="projects"><h2 data-i18n="projects">${T('projects')}</h2>${C.projects.map(p=>`<article class="proj" tabindex="0"><div class="art art-img"><img src="${p.image}" alt="${p.title}" loading="lazy"></div><div><h3>${p.title}</h3><p>${p.text}</p><div class="meta">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div><span class="status">${p.status}</span><br>${p.github?`<a class="gh" href="${p.github}" target="_blank" rel="noopener">GitHub repository</a>`:''}</div></article>`).join('')}</section>
 <section id="tech"><h2 data-i18n="technologies">${T('technologies')}</h2><div class="tech">${C.tech.map((t,i)=>`<div class="techitem" style="animation-delay:${i*.06}s"><img src="images/tech/${techIcon(t)}" alt="${t}" loading="lazy"><span>${t}</span></div>`).join('')}</div></section>
 <section id="pricing"><h2 data-i18n="pricing">${T('pricing')}</h2><p class="lead" data-i18n="openToBuild">${T('openToBuild')}</p><div class="pricing"><div class="pricecard"><h3 data-i18n="priceWithout">${T('priceWithout')}</h3><div class="price">50 000 AMD</div><p data-i18n="priceWithoutDesc">${T('priceWithoutDesc')}</p></div><div class="pricecard"><h3 data-i18n="priceWith">${T('priceWith')}</h3><div class="price">70 000 AMD</div><p data-i18n="priceWithDesc">${T('priceWithDesc')}</p></div></div><p class="prepay" data-i18n="prepay">${T('prepay')}</p></section>
 
