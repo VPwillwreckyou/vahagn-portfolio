@@ -131,16 +131,23 @@ footer{padding:3cqw 6cqw 8cqw;font-size:max(12px,1.1cqw);color:var(--dim)}
  #mon::after{display:none}
  #scr{border-radius:34px}
  #menu{flex-wrap:wrap;padding:12px 14px 8px;font-size:12px}
- #menu nav{order:3;width:100%;overflow-x:auto;gap:14px;scrollbar-width:none}
+ #menu nav{order:3;width:100%;flex-wrap:wrap;overflow:visible;gap:2px 10px}
  #menu button{padding:10px 2px;white-space:nowrap}
- section{padding:90px 22px 40px}
- section:first-child{padding-top:112px}
+ section{padding:calc(var(--menuH,66px) + 22px) 22px 40px}
+ section:first-child{padding-top:calc(var(--menuH,66px) + 40px)}
  .big{font-size:21cqw}.proj{grid-template-columns:1fr;gap:20px}.proj:nth-of-type(odd) .art{order:0}
  .proj h3{font-size:14cqw}.proj p,.meta,.gh,.status,.roles,ol span{font-size:15px}
  h2{font-size:15px}.lead{font-size:19px}.cta{font-size:15cqw}.links{font-size:17px}ol b{font-size:22px}
  .tech{gap:0 16px}.tech span{font-size:13cqw!important}
  .a3 i{font-size:12px}
  #langSel,#themeToggle{font-size:12px}
+}
+@media (max-width:360px){
+ #menu nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 6px;font-size:11px}
+ #menu nav button{padding:8px 0}
+}
+@media (max-width:340px){
+ #menu nav{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){.hero h1 span,.hero p{animation:none;opacity:1;transform:none}.hint i,.a4 b{animation:none}.art{transition:none}}
 /* contact popup */
@@ -361,7 +368,7 @@ const mon=$('#mon'),os=$('#os'),track=$('#track'),scr=$('#scr'),spacer=$('#space
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let intro,over,max,cur=0,tgt=0,rafId=0,running=false;
 const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),ease=t=>t*t*(3-2*t);
-function measure(){const vh=innerHeight;intro=vh*1.2;over=Math.max(0,track.scrollHeight-scr.clientHeight);max=intro+over+vh*.2;spacer.style.height=(max+vh)+'px';read()}
+function measure(){const vh=innerHeight;const menuH=(document.getElementById('menu')||{}).offsetHeight||0;document.documentElement.style.setProperty('--menuH',menuH+'px');intro=vh*1.2;over=Math.max(0,track.scrollHeight-scr.clientHeight);max=intro+over+vh*.2;spacer.style.height=(max+vh)+'px';read()}
 function read(){tgt=scrollY;if(!running){running=true;rafId=requestAnimationFrame(frame)}}
 function frame(){cur=reduce?tgt:cur+(tgt-cur)*.14;if(Math.abs(tgt-cur)<.2)cur=tgt;
  const q=ease(cl(cur/intro));
@@ -386,7 +393,7 @@ _fab.addEventListener('click',openContact);
 _modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeContact));
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!_modal.hidden)closeContact()});
 /* lang & theme wiring */
-document.getElementById('langSel').addEventListener('change',e=>{LANG=e.target.value;applyLang()});
+document.getElementById('langSel').addEventListener('change',e=>{LANG=e.target.value;applyLang();measure()});
 document.getElementById('themeToggle').addEventListener('click',()=>{THEME=THEME==='dark'?'light':'dark';applyTheme();_lastSky=-1;measure()});
 /* initial render */
 applyLang();
